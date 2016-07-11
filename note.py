@@ -71,6 +71,19 @@ tip = cost * TIP_RATE
 total = cost + tax + tip
 
 # Display the result
-print("The tax is %.2f and the tip is %.2f" % (tax, tip, total))
+print("The tax is %.2f and the tip is %.2f, making the total %.2f" % (tax, tip, total))
+
+##
+# Compute the sum n positive integers.
+#
+
+# Read input from the user
+n = int(input("Enter a positive integer: "))
+
+# Compute the sum
+sum = n * (n + 1) / 2
+
+# Display the result
+print("The sum first ", n, "positive integers is", sum)
 
 

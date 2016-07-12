@@ -183,3 +183,61 @@ cost = kwh * ELECTRICITY_PRICE
 # Display the cost
 print("That much energy will cost %.2f cents." % cost)
 
+##
+# Calculate the speed of an object when it hits the ground after
+# being dropping
+#
+from math import sqrt
+
+# Define a constant for the acceleration due to gravity in m/s**2
+GRAVITY = 9.8
+
+# Read the height form which the object is dropped
+d = float(input("Height form which the object is dropped (in meters): "))
+
+# Compute the final velocity
+vf = sqrt(2 * GRAVITY * d)
+
+# Display the result
+print("It will hit the ground at %.2f m/s. " % vf)
+
+##
+# Compute the are of a regular polygon
+#
+
+from math import tan, pi
+
+# Read input from the user
+s = float(input("Enter the length of each side of the polygon: "))
+n = int(input("Enter the number of sides: "))
+
+# Compute the area of the polygon
+area = (n * s ** 2) / (4 * tan(pi / n))
+
+# Display the result
+print("The area of the polygon is", area)
+
+##
+# Convert a number of seconds to days, hours, minutes and seconds
+#
+SECONDS_PER_DAY = 86400
+SECONDS_PER_HOUR = 3600
+SECONDS_PER_MINUTE = 60
+
+# Read input form the user
+seconds = int(input("Enter a number of seconds: "))
+
+# Compute the days, hours, minutes and seconds
+days = seconds / SECONDS_PER_DAY
+seconds = seconds % SECONDS_PER_DAY
+
+hours = seconds / SECONDS_PER_HOUR
+seconds = seconds % SECONDS_PER_HOUR
+
+minutes = seconds / SECONDS_PER_MINUTE
+seconds = seconds % SECONDS_PER_MINUTE
+
+# Display the result with the desired formatting
+print("The equivalent duration is",  "%d:%02d:%02d:%02d." % (days, hours, minutes, seconds))
+
+

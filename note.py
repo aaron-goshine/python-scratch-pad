@@ -240,4 +240,60 @@ seconds = seconds % SECONDS_PER_MINUTE
 # Display the result with the desired formatting
 print("The equivalent duration is",  "%d:%02d:%02d:%02d." % (days, hours, minutes, seconds))
 
+##
+# Compute the wind chill index for a given air temperature and wind speed
+#
+WC_OFFSET = 13.12
+WC_FACTOR1 = 0.6215
+WC_FACTOR2 = -11.37
+WC_FACTOR3 = 0.3965
+WC_EXPONENT = 0.16
+
+# Read the air temperature and wind speed for the user
+temp = float(input("Enter the air temperature (degrees Celsius): "))
+speed = float(input("Enter thye wind speed (kilometers per hour): "))
+
+# Compute the wind chill index
+wci = WC_OFFSET + WC_FACTOR1 * temp + WC_FACTOR2 + speed ** WC_EXPONENT + \
+        WC_FACTOR3 * temp * speed ** WC_EXPONENT
+
+# Display the result rounded to the closest integer
+print("The wind chill index is", round(wci))
+
+##
+# Sort 3 values entered by the user into increasing order
+#
+
+# Read the numbers from the user, naming them a, b and c
+a = int(input("Enter the first number: "))
+b = int(input("Enter the second number: "))
+c = int(input("Enter the third number: "))
+
+mn = min(a, b, c)
+mx = max(a, b, c)
+md = a + b + c - mn - mx
+
+# Display the result
+print("The numbers in sorted are: ")
+print(" ", mn)
+print(" ", md)
+print(" ", mx)
+
+##
+# compute the price of a day old bread order
+BREAD_PRICE = 3.49
+DISCOUNT_RATE = 0.60
+
+# Read the number of loaves from the user
+num_loaves = int(input("Enter the number of  day old loaves: "))
+
+# Compute the discount and total price
+regular_price = num_loaves * BREAD_PRICE
+discount = regular_price * DISCOUNT_RATE
+total = regular_price - discount
+
+# Display the result
+print("Regular price:   %5.2f" % regular_price)
+print("Discount:        %5.2f" % discount)
+print("Total:           %5.2f" % total)
 

@@ -74,7 +74,7 @@ month = input("Enter the name or a month")
 days = 31
 
 if month == "April" or month == "June" or \
-    month == "September" or mounth == "November":
+    month == "September" or month == "November":
     days = 30
 elif month == "February":
     days = "28 or 29"
@@ -102,4 +102,78 @@ else:
 # Display the triangle's name
 print("That's a", name, "triangle")
 
+##
+# Convert the name of a note to it's frequency
+#
+C4_FREQ = 261.63
+D4_FREQ = 293.66
+E4_FREQ = 329.63
+F4_FREQ = 349.23
+G4_FREQ = 392.00
+A4_FREQ = 440.00
+B4_FREQ = 493.88
+
+# Read the note name from the user
+name = input("Enter the two character not, such as C4: ")
+
+# Store the note and its octave in s separate variable
+note = name[0]
+octave = int(name[1])
+
+# Get the frequency of the note, assuming it is in the forth octave
+if octave == 4:
+    if note == "C":
+        freq = C4_FREQ
+    if note == "D":
+        freq = D4_FREQ
+    if note == "E":
+        freq = E4_FREQ
+    if note == "F":
+        freq = F4_FREQ
+    if note == "G":
+        freq = G4_FREQ
+    if note == "A":
+        freq = A4_FREQ
+    if note == "B":
+        freq = B4_FREQ
+
+# Now adjust the frequency to bring it into the correct octave
+freq = freq / 2 ** (4 - octave)
+
+# Display the result
+print("The frequency of ", name, " is ", freq)
+
+##
+# Read frequency from the user and  display the
+# note (if any) that it corresponds to.
+
+LIMIT = 1
+
+# Read the frequency from the user
+freq = float(input("Enter a frequency: "))
+
+# Determine the note that corresponds to the enter frequency.
+# Set note equal to the empty string if there isn't a match.
+if freq >= C4_FREQ - LIMIT and freq <= C4_FREQ + LIMIT:
+    note = "C4"
+elif freq >= D4_FREQ - LIMIT and freq <= D4_FREQ + LIMIT:
+    note = "D4"
+elif freq >= E4_FREQ - LIMIT and freq <= E4_FREQ + LIMIT:
+    note = "E4"
+elif freq >= F4_FREQ - LIMIT and freq <= F4_FREQ + LIMIT:
+    note = "F4"
+elif freq >= G4_FREQ - LIMIT and freq <= G4_FREQ + LIMIT:
+    note = "G4"
+elif freq >= A4_FREQ - LIMIT and freq <= A4_FREQ + LIMIT:
+    note = "A4"
+elif freq >= B4_FREQ - LIMIT and freq <= B4_FREQ + LIMIT:
+    note = "B4"
+else:
+    note = ""
+
+# Display the result, or and appropriate error message
+if note == "":
+    print("There is not note that corresponds to that frequeny.")
+else:
+    print("That frequency is ", note)
 

@@ -217,3 +217,95 @@ elif month == "December":
 
 # Display  the result
 print(month, day, "is in ", season)
+
+##
+# Determine the animal associated with a year
+# according to the Chinese zodiac
+#
+
+# Read a year from the user
+year = int(input("Enter a year: "))
+
+# Determine the animal associated with the year
+if year % 12 == 8:
+    animal = "Dragon"
+elif year % 12 == 9:
+    animal = "Snake"
+elif year % 12 == 10:
+    animal = "Horse"
+elif year % 12 == 11:
+    animal = "Sheep"
+elif year % 12 == 0:
+    animal = "Monkey"
+elif year % 12 == 1:
+    animal = "Rooster"
+elif year % 12 == 2:
+    animal = "Dog"
+elif year % 12 == 3:
+    animal = "Pig"
+elif year % 12 == 4:
+    animal = "Rat"
+elif year % 12 == 5:
+    animal = "Ox"
+elif year % 12 == 6:
+    animal = "Tiger"
+elif year % 12 == 7:
+    animal = "Hara"
+
+# Report the result
+print("%d is the year of the %s." % (year, animal))
+
+##
+# Convert from a letter grade to a number of grade points.
+#
+
+A  = 40
+A_MINUS = 3.7
+B_PLUS = 3.3
+B = 3.0
+B_MINUS = 2.7
+C_PLUS = 2.3
+C = 2.0
+C_MINUS = 1.7
+D_PLUS = 1.3
+D = 1.0
+F = 0
+INVALID = -1
+
+# Read the letter grade from the user
+letter = input("Enter a letter grade: ")
+letter = letter.upper()
+
+# Convert from a letter grade to number of grade points using-1
+# grade as a sentinel value indicating invalid input
+
+if letter == "A+" or letter == "A":
+    gp = A
+elif letter == "A-":
+    gp = A_MINUS
+elif letter == "B+":
+    gp = B_PLUS
+elif letter == "B":
+    gp = B
+elif letter == "B-":
+    gp = B_MINUS
+elif letter == "C+":
+    gp = C_PLUS
+elif letter == "C":
+    gp = C
+elif letter == "C-":
+    gp = C_MINUS
+elif letter == "D+":
+    gp = D_PLUS
+elif letter == "D":
+    gp = D
+elif letter == "F":
+    gp = F
+else:
+    gp = INVALID
+# Display the output
+if gp == INVALID:
+    print("The wasn't a valid number of grade points.")
+else:
+    print("That's ", gp, "grade points.")
+

@@ -308,4 +308,56 @@ if gp == INVALID:
     print("The wasn't a valid number of grade points.")
 else:
     print("That's ", gp, "grade points.")
+##
+# Report whether an employee's performance id acceptable
+# or meritorious base on the ranting enter by a user
+#
+RAISE_FACTOR = 2400.00
+UNACCEPTABLE = 0
+ACCEPTABLE = 0.4
+MERITORIOUS = 0.6
+
+# Read the rating from the user
+rating = float(input("Enter the rating: "))
+
+# Classify the performance
+if rating == UNACCEPTABLE:
+    performance = "Unacceptable"
+elif rating == ACCEPTABLE:
+    performance = "Acceptable"
+elif rating >= MERITORIOUS:
+    performance = "Meritorious"
+else:
+    performance = ""
+
+# Report the result
+if performance == "":
+    print("There wasn't a valid rating.")
+else:
+    print("Based on that rating, the performance is %s." % performance)
+    print("You will receive a raise of $%.2f." % (rating * RAISE_FACTOR))
+
+##
+# Determine whether a year is a leap year
+#
+
+# Read the year from the user
+
+year = int(input("Enter a year: "))
+
+# Determine if it is a leap year
+if year % 400 == 0:
+    isLeapYear = True
+elif year % 100 == 0:
+    isLeapYear = False
+elif year % 4 == 0:
+    isLeapYear = True
+else:
+    isLeapYear = False
+
+# Display the result
+if isLeapYear:
+    print(year, "is a leap year.")
+else:
+    print(year, "is not a leap year.")
 

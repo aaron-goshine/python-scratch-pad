@@ -11,7 +11,7 @@ NICKEL = 0.05
 total = 0.00
 
 # Read the price of the first item as a string
-line = input("Enter the price of the item (blank to quit): ")
+line = raw_input("Enter the price of the item (blank to quit): ")
 
 # Continue reading items until a blank line is entered
 while line != "":
@@ -20,10 +20,10 @@ while line != "":
     total = total + float(line)
 
     # Read the cost of the next item
-    line = input("Enter the price of the item (blank to quit): ")
+    line = raw_input("Enter the price of the item (blank to quit): ")
 
 # Display the exact total payable
-print("The exact amount payable id %.02f" % total)
+print("The exact amount payable is %.02f" % total)
 
 # Compute the number or pennies that would be left it the
 # total was paid only using nickels
@@ -43,5 +43,4 @@ else:
 
 # Display the cash amount payable
 print("The cash amount payable is %.02f" % cash_total)
-
 

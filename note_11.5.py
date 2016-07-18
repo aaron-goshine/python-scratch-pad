@@ -1,7 +1,6 @@
 ##
 # Determine whether or not a string is a palindrome.
 #
-
 # Read the input from the user
 line = raw_input("Enter a string: ")
 
@@ -23,5 +22,4 @@ for i in range(0, len(line) // 2):
         print(line, "is a palindrome")
     else:
         print(line, "is not a palindrome")
-
 

@@ -35,4 +35,3 @@ for i in range(1, NUM_ITEMS):
 # Display the summary results
 print("The maximum value found was", mx_value)
 print("The maximum value was updated", num_updates, "time")
-

@@ -35,3 +35,15 @@ def alternativeMedian(a, b, c):
 # Display the median of 3 values
 print("The median value is : ", median(1, 2, 3))
 print("The median value calculate using alternative: ", alternativeMedian(1, 2, 3))
+
+## Generate the ordinal for the given Int
+def intToOrdinal (n):
+    if n == 11 or n == 12 or n == 13:
+        return str(n) + "th"
+    elif n % 10 == 1:
+        return str(n) + "st"
+    elif n % 10 == 3:
+        return str(n) + "rd"
+    else:
+        return str(n) + "th"
+

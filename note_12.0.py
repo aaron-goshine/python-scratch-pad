@@ -195,5 +195,29 @@ def isPrime(n):
 
 print("Is 1234567 a prime", isPrime(1234567))
 
+##
+# Generate and display a random password
+#
+from random import randint
+SHORTEST = 8
+LONGEST  = 12
+MIN_ASCII = 33
+MAX_ASCII = 126
+
+## Generate a random password
+# @return a string containing a random password
+def randomPassword ():
+    # Select a random length for the password
+    randomLength = randint(SHORTEST, LONGEST)
+    # Generate and appropriate number of random characters,
+    # adding each one to the end of result
+    result = ""
+    for i in range(randomLength):
+        randomChar = chr(randint(MIN_ASCII, MAX_ASCII))
+        result = result + randomChar
+    # Return the random password
+    return result
+
+print("Your new password is: ", randomPassword())
 
 

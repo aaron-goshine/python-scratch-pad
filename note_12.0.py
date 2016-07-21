@@ -133,8 +133,7 @@ def capitalize (s):
     # Capitalize the first letter that follow a ".", "!" or "?":
     pos = 0
     while pos < len(s):
-        if result[pos] == "." or result[pos] == "!" \
-            or result[pos] == "?" or result[pos] == " ":
+        if result[pos] == "." or result[pos] == "!" or result[pos] == "?":
             # Move past the ".", "!" or "?"
             pos = pos + 1
 
@@ -142,16 +141,38 @@ def capitalize (s):
             while pos < len(s) and result[pos] == " ":
                 pos = pos + 1
 
-                # if we haven't reach the end of the string then replace
-                # the current character with it's uppercase equivalent
-                if pos < len(s):
-                    result = result[0 : pos] + \
-                            result[pos].upper() + \
-                            result[pos + 1 : len(result)]
-
+            # if we haven't reach the end of the string then replace
+            # the current character with it's uppercase equivalent
+            if pos < len(s):
+                result = result[0 : pos] + \
+                        result[pos].upper() + \
+                        result[pos + 1 : len(result)]
         # Move to the next character
         pos = pos + 1
 
-        return result
+    return result
 
-print capitalize("this sentence is capitalize by python, yeah?")
+print(capitalize("this sentence is capitalize by python, yeah?"))
+
+##
+# Determine whether or not a string entered by the user is an integer?
+#
+
+## Determine if a string contains a valid representation of an integer
+# @param s the string to check
+# @return True ifs represent and integer. False otherwise
+#
+def isInteger (s):
+    # Remove white space from the beginning and end of the string
+    s = s.strip()
+
+    # Determine if the remaining characters from a valid integer
+    if (s[0] == "+" or s[0] == "-") and s[1:].isdigit():
+        return True
+    if s.isdigit():
+        return True
+    return False
+
+print("Is `1121s` an integer", isInteger("1121s"))
+
+

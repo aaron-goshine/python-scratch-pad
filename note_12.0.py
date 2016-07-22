@@ -53,8 +53,8 @@ def intToOrdinal (n):
 # @return (none)
 #
 def displayVerse (n):
-    print "==========================================="
-    print "On the", intToOrdinal(n), "day of Christmas"
+    print ("===========================================")
+    print ("On the", intToOrdinal(n), "day of Christmas")
     print("my true love sent to me: ")
     if n >= 12:
         print("Twelve drummers drumming,")
@@ -79,10 +79,10 @@ def displayVerse (n):
     if n >= 2:
         print("Two turtle doves,")
     if n == 1:
-        print "A",
+        print("A"),
     else:
-        print "And a",
-        print "Partridge in a tree."
+        print("And a", end = "")
+        print("Partridge in a tree.")
 
 for verse in range(1, 13):
     displayVerse(verse)

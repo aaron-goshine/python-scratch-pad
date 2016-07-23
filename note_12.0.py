@@ -81,7 +81,7 @@ def displayVerse (n):
     if n == 1:
         print("A"),
     else:
-        print("And a", end = "")
+        print("And a", end= "")
         print("Partridge in a tree.")
 
 for verse in range(1, 13):
@@ -220,4 +220,35 @@ def randomPassword ():
 
 print("Your new password is: ", randomPassword())
 
+##
+# Check whether or not a password is good.
+#
+
+## Check whether or not a password is good.
+# A good password is at lease 8 characters long
+#  and contains an uppercase letter, a lowercase letter
+#  and a number
+
+def checkPassword(password):
+    has_upper = False
+    has_upper = False
+    has_num = False
+
+    # Check each character in the password and see
+    # which requirement it meets
+    for ch in password:
+        if ch >= "A" and ch <= "Z":
+            has_upper = True
+        elif ch >= "a" and ch <= "z":
+            has_lower = True
+        elif ch >= "0" and ch <= "9":
+            has_num = True
+
+    # If the password has all 4 properties
+    if len(password) >= 8 and has_upper and has_lower and has_num:
+        return True
+
+# Demonstrate the password checking function
+rnd_password = randomPassword()
+print(rnd_password, "is valid", checkPassword(rnd_password))
 

@@ -12,7 +12,7 @@ def allSublists (data):
     # Generate all of the sub-lists of data from length 1 to len(data)
     for length in  range(1, len(data) + 1):
         # Generate the sub-lists starting at each index
-        for i in range(0, len(data) - length - 1):
+        for i in range(0, len(data) - length + 1):
             # Add the current sub-list to the list of sub-lists
             sublists.append(data[i : i + length])
 

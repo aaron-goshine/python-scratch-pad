@@ -1,0 +1,70 @@
+##
+# Find and list all of the words in a file that are misspelled
+#
+
+def words_only (words):
+    ill_char = "_ =\"/(.)!2: [1],'%{}012345789"
+    le_char = ""
+    for ch in words:
+        if ch not in ill_char:
+            le_char = le_char + ch
+        else:
+            le_char = le_char + " "
+    return le_char.split(" ")
+
+
+import sys
+
+WORD_FILE = "/usr/share/dict/words"
+# Ensure that the program has the correct number of
+# command line parameters
+if len(sys.argv) != 2:
+    print("One command line parameter must be provided. Quiting..")
+    sys.exit()
+
+# Open the file. Exit id the file is not opened successfully.
+try:
+    inf = open(sys.argv[1], "r")
+except:
+    print("Failed to open '%s' for reading. Quiting..." % sys.argv[1])
+    sys.exit()
+
+# Load all of the words into a dictionary of valid words.
+# The value() id associated with each word, but it is never used.
+valid = {}
+word_file = open(WORD_FILE, "r")
+for word in word_file:
+    word = word.lower().rstrip()
+    valid[word] = 0
+word_file.close()
+
+# Read each line from the file, adding any misspelled
+# word to the list of misspellings
+misspelled = []
+for line in inf:
+    # Discard the punctuation marks by calling
+
+    for word in  words_only(line):
+        # Only add to the misspelled list if the word is
+        #  misspelled and not already in the list
+        word = word.lower().rstrip()
+        if word.lower() not in valid and word not in misspelled:
+            misspelled.append(word)
+
+# Close the file being checked
+inf.close()
+
+# Display the misspelled words, or a message indicating that no
+# words are misspelled
+
+if len(misspelled) == 0:
+    print("No words were misspelled.")
+else:
+    print("The following words are misspelled:")
+    for word in misspelled:
+        print(" ", word)
+
+
+
+
+

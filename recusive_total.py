@@ -18,12 +18,19 @@ def readAndTotal():
         # and use Recursive to read the next line
         return float(line) + readAndTotal()
 
-    # Read a collection of numbers from the user and display the total
-def main():
-    # Read the value from the user compute the total
-    total = readAndTotal()
 
-    # Display the result
-    print("The total of all those values is", total)
-main()
+##
+# Determine whether or not a string is a palindrome
+# @param s the string to check
+# @return True is the string is palindrome, False otherwise
+def isPalindrome (s):
+    # Base case: the empty string is a palindrome only if  the first and last
+    # characters are the same
+    if len(s) <= 1:
+        return True
+
+    # Recursive case: The string is a palindrome only id the first
+    # and last characters match, and the rest of the string is a
+    # palindrome
+    return s[0] == s[len(s) - 1] and isPalindrome(s[1 : len(s) - 1])
 

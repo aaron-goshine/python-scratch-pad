@@ -6,6 +6,7 @@
 
 # from hex_digit import *
 
+
 def int2hex(number):
     hexstring = '' if number > 0 else '0'
     while number > 0:
@@ -13,10 +14,12 @@ def int2hex(number):
         number = int(number / 16)
     return hexstring[::-1]
 
+
 def hex2int(string):
     return int(string, 16)
 
-## Convert a number from base 10 to base n
+
+# # Convert a number from base 10 to base n
 # @param num the base 10 number to convert
 # @param new_base the base to convert to
 # @return the string of digit new_base
@@ -39,5 +42,3 @@ def dec2n (num, new_base):
 
     # Return the result
     return result
-
-

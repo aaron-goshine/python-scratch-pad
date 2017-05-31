@@ -1,3 +1,0 @@
-# python-scratch-pad
-## todo
--
